@@ -1,19 +1,31 @@
 {
-  "posts": [
+  "professor":
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "name": "John Smith",
+      "ID": "0123456",
+      "password": "johnsmith",
+    }, 
+
+    "subjects": [{
+      "name": "Math"
+},
+{
+      "name": "English"
+},
+{
+      "name": "History"
+},
+{
+      "name": "Science"
+}],
+
+
+    "students":
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "name":"Lorem Ipsum",
+      "ID": "2223456",
+      "password": "loremipsum"
+
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+    
 }

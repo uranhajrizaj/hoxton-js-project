@@ -1,8 +1,49 @@
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+.form {
+  display: grid;
+  place-content: center;
+  gap: 1.5rem;
+  
+}
+.holder {
+  display: grid;
+  place-content: center;
+  gap: 1rem;
+  padding:2rem;
+  border: solid 1px #000;
+  width: 20rem;
+  border-radius: 10px;
+
+}
+
+.title{
+  font-size: 3rem;
+  /* font-weight: bold; */
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  font-family: 'Edu QLD Beginner', cursive;
+  font-family: 'Rubik Moonrocks', cursive;
+  font-family: 'Secular One', sans-serif;
+}
+.user, .password {
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+.login-button{
+  padding: 0.5rem;
+  border-radius: 10px;
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
 }
