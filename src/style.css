@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  height: 100vh;
+}
+
 .container {
   height: 100vh;
   display: grid;
@@ -30,7 +34,6 @@
 
 .title {
   font-size: 3rem;
-  /* font-weight: bold; */
   text-align: center;
   font-family: 'Edu QLD Beginner', cursive;
   font-family: 'Rubik Moonrocks', cursive;
@@ -53,10 +56,110 @@
   cursor: pointer;
 }
 
-
-.header_part {
+header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: solid 1px rgb(193, 193, 193);
+  padding: 0.5rem 1rem;
   width: 100%;
   background-color: rgb(5, 5, 24);
   color: white;
   justify-content: space-between;
+}
+
+.header_part {
+  padding: 10px;
+  text-align: left;
+}
+
+.header_container {
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: end;
+  padding: 10px;
+
+}
+
+.header_container a {
+  font-size: 18px;
+  padding: 30px;
+}
+
+.header_container a:hover {
+  font-size: 20px;
+  color: rgb(125, 125, 187);
+
+}
+
+
+.main {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+
+}
+
+.Subject_Part {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  border: solid 5px rgb(74, 74, 74);
+  border-radius: 10px;
+  float: left;
+  height: auto;
+  width: 250px;
+  text-align: center;
+  margin-right: 200px;
+
+}
+
+.Subject_Part h4 {
+  border: solid 5px rgb(74, 74, 74);
+  padding: 20px;
+  justify-content: center;
+  text-align: center;
+}
+
+.Subject_Part h3 {
+  border-top: solid 2px black;
+  padding: 20px;
+  justify-content: center;
+  text-align: center;
+}
+
+.Subject_Part h3:hover {
+  font-size: 22px;
+  color: rgb(4, 4, 29);
+  background-color: #dbeffd;
+}
+
+.Important_Part {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  place-items: right;
+  justify-content: center;
+  border: solid 5px rgb(74, 74, 74);
+  border-radius: 10px;
+  width: 900px;
+  height: 600px;
+  margin: 50px;
+  text-align: center;
+}
+
+.Professor_in_Student {
+  text-align: center;
+  justify-content: center;
+  border-right: solid 3.5px rgb(74, 74, 74);
+
+
+}
+
+.Professor_in_Student img {
+  width: 200px;
+  height: 210px;
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+
+.forstudent {
+  display: grid;
+  grid-template-rows: 150px 150px 150px;
+  margin: 60px;
 }
