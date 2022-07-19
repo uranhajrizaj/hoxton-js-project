@@ -1,31 +1,27 @@
 {
-  "professor":
+  "professor": {
+    "name": "John Smith",
+    "ID": "0123456",
+    "password": "johnsmith",
+    "image": "https://images.pexels.com/photos/4342401/pexels-photo-4342401.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+  },
+  "subjects": [
     {
-      "name": "John Smith",
-      "ID": "0123456",
-      "password": "johnsmith",
-    }, 
-
-    "subjects": [{
       "name": "Math"
-},
-{
-      "name": "English"
-},
-{
-      "name": "History"
-},
-{
-      "name": "Science"
-}],
-
-
-    "students":
+    },
     {
-      "name":"Lorem Ipsum",
-      "ID": "2223456",
-      "password": "loremipsum"
-
+      "name": "English"
+    },
+    {
+      "name": "History"
+    },
+    {
+      "name": "Science"
     }
-    
+  ],
+  "students": {
+    "name": "Lorem Ipsum",
+    "ID": "2223456",
+    "password": "loremipsum"
+  }
 }
