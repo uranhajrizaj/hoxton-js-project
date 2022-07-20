@@ -61,66 +61,66 @@ function signIn(email: String, password: String, divEl: HTMLDivElement) {
     });
 }
 
-function renderHomePage() {
-  if (bodyEl === null) return;
-  let containerEl = document.createElement("div");
-  containerEl.className = "container";
+// function renderHomePage() {
+//   if (bodyEl === null) return;
+//   let containerEl = document.createElement("div");
+//   containerEl.className = "container";
 
-  let holderEl = document.createElement("div");
-  holderEl.className = "holder";
+//   let holderEl = document.createElement("div");
+//   holderEl.className = "holder";
 
-  let titleEl = document.createElement("h1");
-  titleEl.textContent = "Welcome! Please sign in!";
-  titleEl.className = "home-title";
-  containerEl.append(titleEl);
+//   let titleEl = document.createElement("h1");
+//   titleEl.textContent = "Welcome! Please sign in!";
+//   titleEl.className = "home-title";
+//   containerEl.append(titleEl);
 
-  let h1El = document.createElement("h1");
-  h1El.textContent = "essm";
-  h1El.className = "title";
+//   let h1El = document.createElement("h1");
+//   h1El.textContent = "essm";
+//   h1El.className = "title";
 
-  let formEl = document.createElement("form");
-  formEl.className = "form";
-  formEl.addEventListener("submit", function (event) {
-    event.preventDefault();
-    signIn(userEl.value, passwordEl.value, divEl);
-    render();
-  });
+//   let formEl = document.createElement("form");
+//   formEl.className = "form";
+//   formEl.addEventListener("submit", function (event) {
+//     event.preventDefault();
+//     signIn(userEl.value, passwordEl.value, divEl);
+//     render();
+//   });
 
-  let userEl = document.createElement("input");
-  userEl.type = "email";
-  userEl.placeholder = "Enter your email";
-  userEl.className = "user";
-  userEl.required = true;
+//   let userEl = document.createElement("input");
+//   userEl.type = "email";
+//   userEl.placeholder = "Enter your email";
+//   userEl.className = "user";
+//   userEl.required = true;
 
-  let divEl = document.createElement("div");
-  divEl.className = "div-password";
-
-
-  let passwordEl = document.createElement("input");
-  passwordEl.type = "password";
-  passwordEl.placeholder = "Enter your password";
-  passwordEl.className = "password";
-  passwordEl.required = true;
-
-  divEl.append(passwordEl);
-
-  if (state.alertMessage !== "") {
-    let pEl = document.createElement("p");
-    pEl.textContent = "* Wrong email or password. Please try again!";
-    pEl.className = "alert-message";
-    divEl.append(pEl);
-  }
-
-  let buttonEl = document.createElement("button");
-  buttonEl.textContent = "Log in";
-  buttonEl.className = "login-button";
+//   let divEl = document.createElement("div");
+//   divEl.className = "div-password";
 
 
-  formEl.append(userEl, divEl, buttonEl);
-  holderEl.append(h1El, formEl);
-  containerEl.append(holderEl);
-  bodyEl.append(containerEl);
-}
+//   let passwordEl = document.createElement("input");
+//   passwordEl.type = "password";
+//   passwordEl.placeholder = "Enter your password";
+//   passwordEl.className = "password";
+//   passwordEl.required = true;
+
+//   divEl.append(passwordEl);
+
+//   if (state.alertMessage !== "") {
+//     let pEl = document.createElement("p");
+//     pEl.textContent = "* Wrong email or password. Please try again!";
+//     pEl.className = "alert-message";
+//     divEl.append(pEl);
+//   }
+
+//   let buttonEl = document.createElement("button");
+//   buttonEl.textContent = "Log in";
+//   buttonEl.className = "login-button";
+
+
+//   formEl.append(userEl, divEl, buttonEl);
+//   holderEl.append(h1El, formEl);
+//   containerEl.append(holderEl);
+//   bodyEl.append(containerEl);
+// }
 
 function renderProfessorPage() {
   if (bodyEl === null) return;
@@ -164,13 +164,20 @@ function renderStudentHearderPage() {
 
 
 function renderStudentMainPage() {
+  let Container = document.createElement('div')
+  Container.className = 'Container'
+
   let MainEl = document.createElement('main')
+  MainEl.className = 'main'
 
   let SubjectDivEl = document.createElement('Div')
   SubjectDivEl.className = 'Subject_Part'
 
+  let AllSubjectsEl = document.createElement('div')
+  AllSubjectsEl.className = 'allsubjects'
   let H3El = document.createElement('h2')
   H3El.textContent = 'Subjects'
+
   let MathEl = document.createElement('h3')
   MathEl.textContent = 'Math'
 
@@ -183,6 +190,12 @@ function renderStudentMainPage() {
   let ScienceEl = document.createElement('h3')
   ScienceEl.textContent = 'Science'
 
+  let AllGradesEl = document.createElement('h2')
+  AllGradesEl.textContent = 'Grade Sheet'
+  AllGradesEl.className = 'gradesheet'
+
+
+
   let ImportantPartEl = document.createElement('div')
   ImportantPartEl.className = 'Important_Part'
 
@@ -190,7 +203,7 @@ function renderStudentMainPage() {
   ProfSectionEl.className = 'Professor_in_Student'
 
   let ProfImg = document.createElement('img')
-  ProfImg.src = 'https://images.pexels.com/photos/4342401/pexels-photo-4342401.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+  ProfImg.src = 'https://images.pexels.com/photos/5212339/pexels-photo-5212339.jpeg?auto=compress&cs=tinysrgb&w=600'
 
   let ProfName = document.createElement('h3')
   ProfName.textContent = 'Professor name'
@@ -234,9 +247,11 @@ function renderStudentMainPage() {
   forstudentPartEl.append(GradesPartEl, AssignmentPartEl, AbsentPartEl)
   ProfSectionEl.append(ProfImg, ProfName, ProfDepartment)
   ImportantPartEl.append(ProfSectionEl, forstudentPartEl)
-  SubjectDivEl.append(H3El, MathEl, EnglishEl, HistoryEl, ScienceEl)
+  AllSubjectsEl.append(H3El, MathEl, EnglishEl, HistoryEl, ScienceEl)
+  SubjectDivEl.append(AllSubjectsEl, AllGradesEl)
   MainEl.append(SubjectDivEl, ImportantPartEl)
-  bodyEl?.append(MainEl)
+  Container.append(MainEl)
+  bodyEl?.append(Container)
 }
 
 

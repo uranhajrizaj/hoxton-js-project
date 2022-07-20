@@ -4,13 +4,15 @@
       "name": "John Doe",
       "username": "jdoe",
       "id": "johndoe@email.com",
-      "password": "jdoe"
+      "password": "jdoe",
+      "image": "https://images.pexels.com/photos/5212339/pexels-photo-5212339.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
       "name": "Jane Poe ",
       "username": "jpoe",
       "id": "janedoe@email.com",
-      "password": "jpoe"
+      "password": "jpoe",
+      "image": "https://images.pexels.com/photos/6325958/pexels-photo-6325958.jpeg?auto=compress&cs=tinysrgb&w=600"
     }
   ],
   "students": [
@@ -18,13 +20,15 @@
       "name": "Alisha Patel",
       "username": "alishapatel",
       "id": "alishapatel@email.com",
-      "password": "apatel"
+      "password": "apatel",
+      "image": "https://images.pexels.com/photos/1462630/pexels-photo-1462630.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
       "name": "Ural Bahadur",
       "username": "ubahadur",
       "id": "uralbahadur@email.com",
-      "password": "ubahadur"
+      "password": "ubahadur",
+      "image": "https://images.pexels.com/photos/1438081/pexels-photo-1438081.jpeg?auto=compress&cs=tinysrgb&w=600"
     }
   ],
   "marks": [
