@@ -41,6 +41,7 @@ function signIn(email, password) {
         state.user.id = professor.id;
         state.user.password = `${professor.password}`;
         state.user.type = "professor";
+        render()
       } else {
         fetch(`http://localhost:3005/students/${email}`)
           .then((resp) => resp.json())
@@ -49,6 +50,7 @@ function signIn(email, password) {
               state.user.id = student.id;
               state.user.password = `${student.password}`;
               state.user.type = "student";
+              render()
             } else {
               alert("Invalid email or password.");
             }
