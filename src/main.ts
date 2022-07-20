@@ -253,9 +253,10 @@ function render() {
   let bodyEl = document.querySelector("body");
   if (bodyEl === null) return;
   bodyEl.textContent = "";
-  if (state.user.type === "") renderHomePage();
-  if (state.user.type === "professor") renderProfessorPage();
-  if (state.user.type === "student") renderStudentPage();
+  // if (state.user.type === "") renderHomePage();
+  // if (state.user.type === "professor") renderProfessorPage();
+  // if (state.user.type === "student") 
+  renderStudentPage();
 }
 render();
 
