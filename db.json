@@ -1,31 +1,56 @@
 {
-  "professor":
+  "professors": [
     {
-      "name": "John Smith",
-      "ID": "0123456",
-      "password": "johnsmith",
-    }, 
-
-    "subjects": [{
-      "name": "Math"
-},
-{
-      "name": "English"
-},
-{
-      "name": "History"
-},
-{
-      "name": "Science"
-}],
-
-
-    "students":
+      "name": "John Doe",
+      "username": "jdoe",
+      "id": "johndoe@email.com",
+      "password": "jdoe"
+    },
     {
-      "name":"Lorem Ipsum",
-      "ID": "2223456",
-      "password": "loremipsum"
-
+      "name": "Jane Poe ",
+      "username": "jpoe",
+      "id": "janedoe@email.com",
+      "password": "jpoe"
     }
-    
+  ],
+  "students": [
+    {
+      "name": "Alisha Patel",
+      "username": "alishapatel",
+      "id": "alishapatel@email.com",
+      "password": "apatel"
+    },
+    {
+      "name": "Ural Bahadur",
+      "username": "ubahadur",
+      "id": "uralbahadur@email.com",
+      "password": "ubahadur"
+    }
+  ],
+  "marks": [
+    {
+      "name": "Math",
+      "studentId": "c@email.com",
+      "professorId": "a@email.com",
+      "dueDate": "2022-08-11"
+    },
+    {
+      "name": "Math",
+      "studentId": "d@email.com",
+      "professorId": "a@email.com",
+      "dueDate": "2022-08-11"
+    },
+    {
+      "name": "English",
+      "studentId": "c@email.com",
+      "professorId": "b@email.com",
+      "dueDate": "2022-08-11"
+    },
+    {
+      "name": "English",
+      "studentId": "d@email.com",
+      "professorId": "b@email.com",
+      "dueDate": "2022-08-11"
+    }
+  ]
 }
