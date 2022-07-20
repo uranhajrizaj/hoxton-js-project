@@ -149,16 +149,14 @@ function renderStudentHearderPage() {
   let HeaderContainerEl = document.createElement('div')
   HeaderContainerEl.className = 'header_container'
 
-  let Element1 = document.createElement('a')
-  Element1.textContent = 'Home'
 
-  let Element2 = document.createElement('a')
-  Element2.textContent = 'Work'
+  let PersonWhoLogsIn = document.createElement('a')
+  PersonWhoLogsIn.textContent = 'Work'
 
   let Element3 = document.createElement('a')
   Element3.textContent = 'Log Out'
 
-  HeaderContainerEl.append(Element1, Element2, Element3)
+  HeaderContainerEl.append(PersonWhoLogsIn, Element3)
   NameDivEl.append(TitleEl)
   headerEl.append(NameDivEl, HeaderContainerEl)
   bodyEl?.append(headerEl)
