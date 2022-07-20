@@ -129,40 +129,10 @@ function renderProfessorPage() {
   let containerEl = document.createElement("div");
   containerEl.className = "container-professor";
 
-    let headerEl = document.createElement("header");
-    headerEl.className = "header";
-  
-    let hollixtionEl = document.createElement("a");
-
-    let h1El = document.createElement("h1");
-    h1El.textContent = "HOLLIXTON";
-    hollixtionEl.append(h1El);
-  
-    let grilsLinkEl = document.createElement("a");
-    grilsLinkEl.textContent = "Girls";
-   
-    let guysLinkEl = document.createElement("a");
-    guysLinkEl.textContent = "Guys";
-  
-    let saleLinkEl = document.createElement("a");
-    saleLinkEl.textContent = "Sale";
-    saleLinkEl.addEventListener("click", function () {
- 
-    let linksEl = document.createElement("div");
-    linksEl.className = "links";
-  
-    let buttonsEl = document.createElement("div");
-    buttonsEl.className = "buttons";
-  
-    let searchButtonEl = document.createElement("button");
-    searchButtonEl.className = "material-symbols-outlined";
-    searchButtonEl.textContent = "search";
-
- 
-})
-    headerEl.append(hollixtionEl, grilsLinkEl, guysLinkEl, saleLinkEl);
-    containerEl.append(headerEl);
-    bodyEl.append(containerEl);
+  let pEl = document.createElement("h1");
+  pEl.textContent = "Welcome professor";
+  containerEl.append(pEl);
+  bodyEl.append(containerEl);
 }
 
 function renderStudentPage() {
