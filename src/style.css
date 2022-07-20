@@ -9,24 +9,26 @@
   display: grid;
   place-items: center;
 }
+
 .form {
   display: grid;
   place-content: center;
   gap: 1.5rem;
-  
+
 }
+
 .holder {
   display: grid;
   place-content: center;
   gap: 1rem;
-  padding:2rem;
+  padding: 2rem;
   border: solid 1px #000;
   width: 20rem;
   border-radius: 10px;
 
 }
 
-.title{
+.title {
   font-size: 3rem;
   /* font-weight: bold; */
   text-align: center;
@@ -34,11 +36,14 @@
   font-family: 'Rubik Moonrocks', cursive;
   font-family: 'Secular One', sans-serif;
 }
-.user, .password {
+
+.user,
+.password {
   padding: 0.5rem;
   border-radius: 10px;
 }
-.login-button{
+
+.login-button {
   padding: 0.5rem;
   border-radius: 10px;
   background-color: #000;
