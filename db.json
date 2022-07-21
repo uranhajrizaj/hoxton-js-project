@@ -3,13 +3,15 @@
     {
       "name": "John Doe",
       "username": "jdoe",
-      "id": "johndoe@email.com",
+      "id": "johndoe@gmail.com",
+      "img": "https://www.fillmurray.com/200/200",
       "password": "jdoe"
     },
     {
-      "name": "Jane Poe ",
+      "name": "James Poe ",
       "username": "jpoe",
-      "id": "janedoe@email.com",
+      "id": "jamespoe@gmail.com",
+      "img": "https://www.fillmurray.com/200/201",
       "password": "jpoe"
     }
   ],
@@ -17,40 +19,67 @@
     {
       "name": "Alisha Patel",
       "username": "alishapatel",
-      "id": "alishapatel@email.com",
+      "id": "alishapatel@gmail.com",
       "password": "apatel"
     },
     {
       "name": "Ural Bahadur",
       "username": "ubahadur",
-      "id": "uralbahadur@email.com",
+      "id": "uralbahadur@gmail.com",
       "password": "ubahadur"
+    }
+  ],
+  "subjects": [
+    {
+      "name": "Algoritms",
+      "id": "algoritms"
+    },
+    {
+      "name": "Data Structures",
+      "id": "data-structures"
+    },
+    {
+      "name": "Operating Systems",
+      "id": "operating-systems"
+    },
+    {
+      "name": "Programming Languages",
+      "id": "programming-languages"
+    },
+    {
+      "name": "Software Engineering",
+      "id": "software-engineering"
+    },
+    {
+      "name": "Web Development",
+      "id": "web-development"
     }
   ],
   "marks": [
     {
-      "name": "Math",
-      "studentId": "c@email.com",
-      "professorId": "a@email.com",
-      "dueDate": "2022-08-11"
+      "subjectId": "algoritms",
+      "studentId": "uralbahadur@gmail.com",
+      "professorId": "jamespoe@gmail.com",
+       "mark": ""
+
     },
     {
-      "name": "Math",
-      "studentId": "d@email.com",
-      "professorId": "a@email.com",
-      "dueDate": "2022-08-11"
+      "subjectId": "data-structures",
+      "studentId": "alishapatel@gmail.com",
+      "professorId": "jamespoe@gmail.com",
+      "mark": ""
     },
     {
-      "name": "English",
-      "studentId": "c@email.com",
-      "professorId": "b@email.com",
-      "dueDate": "2022-08-11"
+      "subjectId": "operating-systems",
+      "studentId": "uralbahadur@gmail.com",
+      "professorId": "jamespoe@gmail.com",
+      "mark": ""
     },
     {
-      "name": "English",
-      "studentId": "d@email.com",
-      "professorId": "b@email.com",
-      "dueDate": "2022-08-11"
+      "subjectId": "programming-languages",
+      "studentId": "alishapatel@gmail.com",
+      "professorId": "johndoe@gmail.com",
+      "mark": ""
     }
   ]
 }
