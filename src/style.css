@@ -41,7 +41,6 @@ body {
   place-content: center;
   gap: 1rem;
   padding: 2rem;
-  /* border: 2px solid #0078AA; */
   width: 20rem;
   border-radius: 10px;
   background-color: #fff;
@@ -151,7 +150,7 @@ body {
 
 header {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   border-bottom: solid 1px rgb(193, 193, 193);
   padding: 0.5rem 1rem;
   width: 100%;
@@ -160,16 +159,30 @@ header {
   justify-content: space-between;
 }
 
+.sidebarimg {
+  margin: 7px;
+  width: 30px;
+  height: 30px;
+}
+
 .header_part {
   padding: 10px;
-  text-align: left;
+  text-align: center;
+  font-size: 19px;
 }
 
 .header_container {
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   text-align: end;
   padding: 10px;
 
+}
+
+.studentaccoutimg {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-left: 10px;
 }
 
 .header_container a {
@@ -181,6 +194,55 @@ header {
   font-size: 20px;
   color: rgb(125, 125, 187);
 
+}
+
+.side-nav {
+  display: flex;
+  flex-direction: column;
+  background-color: #191b1f;
+  height: 90%;
+  width: 230px;
+  padding-top: 5vh;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.Close {
+  position: relative;
+  color: white;
+  top: -3%;
+  left: 81%;
+  font-size: 20px;
+}
+
+.Close:hover {
+  color: gray;
+  font-size: 24px;
+}
+
+.SideBarUl {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  list-style-type: none;
+}
+
+.SideBarLi {
+  color: rgb(230, 230, 230);
+  font-size: 18px;
+  padding: 0 20px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  border-bottom: 1px solid rgb(97, 94, 94);
+  border-top: 1px solid rgb(97, 94, 94);
+
+}
+
+.SideBarLi:hover {
+  background-color: #263c45;
+  color: gray;
 }
 
 
@@ -289,4 +351,83 @@ header {
   display: grid;
   grid-template-rows: 150px 150px 150px;
   margin: 60px;
+}
+
+.main {
+  height: 100vh;
+  display: grid;
+  place-items: start center;
+  background-image: url(https://cdn.wallpapersafari.com/68/66/PLgQbl.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  gap: 1rem
+}
+
+.TheHoleText {
+  width: 60%;
+  border: solid 5px rgb(9, 9, 40);
+  border-radius: 10px;
+  place-content: center;
+  justify-content: center;
+  margin-top: 15%;
+  background-color: rgba(199, 230, 255, 0.816);
+}
+
+.moreinfo {
+  text-align: center;
+  padding: 10px;
+}
+
+.more-info-title {
+  font-size: 29px;
+}
+
+.TextpartDiv {
+  display: grid;
+  grid-template-rows: 50px 50px 1fr;
+  padding: 20px;
+}
+
+.What-is-Erasmus {
+  padding: 10px;
+  text-align: center;
+}
+
+.ErasmusTextPart {
+  display: grid;
+  grid-template-rows: auto auto auto auto auto;
+  padding: 20px;
+}
+
+.takepartinerasmus {
+  padding: 5px;
+}
+
+.takepartinerasmus2 {
+  padding: 5px;
+  padding-left: 25px;
+}
+
+.takepartinerasmus3 {
+  padding: 5px;
+  padding-left: 25px;
+}
+
+.takepartinerasmus4 {
+  padding: 5px;
+}
+
+.Regulations {
+  text-align: center;
+  padding: 10px;
+}
+
+.Decisions_Regulations {
+  display: grid;
+  grid-template-rows: auto auto auto auto auto auto;
+  padding: 20px;
+}
+
+.rules {
+  padding: 5px;
 }
