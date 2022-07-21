@@ -18,14 +18,12 @@ body {
   background-image: url(https://cdn.wallpapersafari.com/68/66/PLgQbl.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-<<<<<<< HEAD
   gap: 1rem;
 }
 .home-title {
   place-self: end center;
   font-size: 2.5rem;
   font-family: "Edu QLD Beginner", cursive;
-=======
   gap: 1rem
 }
 
@@ -33,7 +31,6 @@ body {
   place-self: end center;
   font-size: 2.5rem;
   font-family: 'Edu QLD Beginner', cursive;
->>>>>>> 5b15b5d205ae852486bbbf66b7c20877de5b864e
   color: #fff;
   text-align: center;
 }
@@ -58,11 +55,8 @@ body {
   font-size: 3rem;
   text-align: center;
   font-family: Lobster, sans-serif;
-<<<<<<< HEAD
   color: #0078aa;
-=======
   color: #0078AA;
->>>>>>> 5b15b5d205ae852486bbbf66b7c20877de5b864e
 }
 
 .user,
@@ -82,37 +76,29 @@ body {
   font-size: 1.2rem;
   cursor: pointer;
 }
-<<<<<<< HEAD
 .login-button:hover {
   background-color: #3ab4f2;
   color: #fff;
 }
-=======
 
 .login-button:hover {
   background-color: #3AB4F2;
   color: #fff;
 }
 
->>>>>>> 5b15b5d205ae852486bbbf66b7c20877de5b864e
 .div-password {
   display: grid;
   place-content: center;
   gap: 1rem;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 5b15b5d205ae852486bbbf66b7c20877de5b864e
 .alert-message {
   color: rgb(218, 48, 48);
   font-size: 1rem;
   text-align: start;
 }
-<<<<<<< HEAD
 
 .header-professor {
-=======
 
 /* header tek faqet studenti dhe profesori me qene me ngjyre blu te erret dhe teksti me ngjyre te bardhe */
 
@@ -137,12 +123,10 @@ body {
 }
 
 .navigation {
->>>>>>> 5b15b5d205ae852486bbbf66b7c20877de5b864e
   display: grid;
   grid-auto-flow: column;
   padding: 1rem;
   place-content: space-between;
-<<<<<<< HEAD
   background-color: #0078aa;
   align-items: center;
 }
@@ -156,7 +140,6 @@ body {
 .logout-button {
   padding: 0.5rem;
   border-radius: 10px;
-=======
   padding: 0.7rem;
 }
 
@@ -169,7 +152,6 @@ body {
 
 .material-symbols-outlined {
   background-color: inherit;
->>>>>>> 5b15b5d205ae852486bbbf66b7c20877de5b864e
   border: none;
   background-color: #3ab4f2;
   color: #fff;
@@ -177,7 +159,6 @@ body {
   font-size: 1rem;
   cursor: pointer;
 }
-<<<<<<< HEAD
 .logout-button:hover {
   background-color: white;
   color: #0078aa;
@@ -289,7 +270,6 @@ details > li {
 .student {
   display: grid;
   place-content: center;
-=======
 
 .bag {
   position: relative;
@@ -304,7 +284,6 @@ details > li {
   top: -5px;
   right: -0.7px;
 
->>>>>>> 5b15b5d205ae852486bbbf66b7c20877de5b864e
 }
 
 header {
