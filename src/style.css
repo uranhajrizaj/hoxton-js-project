@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Edu+QLD+Beginner&family=Rubik+Moonrocks&family=Secular+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Edu+QLD+Beginner&family=Rubik+Moonrocks&family=Secular+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 
 * {
   padding: 0;
@@ -18,6 +18,12 @@ body {
   background-image: url(https://cdn.wallpapersafari.com/68/66/PLgQbl.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  gap: 1rem;
+}
+.home-title {
+  place-self: end center;
+  font-size: 2.5rem;
+  font-family: "Edu QLD Beginner", cursive;
   gap: 1rem
 }
 
@@ -33,7 +39,6 @@ body {
   display: grid;
   place-content: center;
   gap: 1.5rem;
-
 }
 
 .holder {
@@ -44,13 +49,13 @@ body {
   width: 20rem;
   border-radius: 10px;
   background-color: #fff;
-
 }
 
 .title {
   font-size: 3rem;
   text-align: center;
   font-family: Lobster, sans-serif;
+  color: #0078aa;
   color: #0078AA;
 }
 
@@ -58,18 +63,22 @@ body {
 .password {
   padding: 0.5rem;
   border-radius: 10px;
-  border: 2px solid #0078AA
+  border: 2px solid #0078aa;
 }
 
 .login-button {
   padding: 0.5rem;
   border-radius: 10px;
   border: none;
-  background-color: #0078AA;
+  background-color: #0078aa;
   color: #fff;
   font-weight: bold;
   font-size: 1.2rem;
   cursor: pointer;
+}
+.login-button:hover {
+  background-color: #3ab4f2;
+  color: #fff;
 }
 
 .login-button:hover {
@@ -86,9 +95,10 @@ body {
 .alert-message {
   color: rgb(218, 48, 48);
   font-size: 1rem;
-  /* font-weight: bold; */
   text-align: start;
 }
+
+.header-professor {
 
 /* header tek faqet studenti dhe profesori me qene me ngjyre blu te erret dhe teksti me ngjyre te bardhe */
 
@@ -115,7 +125,21 @@ body {
 .navigation {
   display: grid;
   grid-auto-flow: column;
+  padding: 1rem;
   place-content: space-between;
+  background-color: #0078aa;
+  align-items: center;
+}
+.div-professor {
+  display: grid;
+  grid-auto-flow: column;
+  place-content: center;
+  gap: 1rem;
+}
+
+.logout-button {
+  padding: 0.5rem;
+  border-radius: 10px;
   padding: 0.7rem;
 }
 
@@ -129,9 +153,123 @@ body {
 .material-symbols-outlined {
   background-color: inherit;
   border: none;
+  background-color: #3ab4f2;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
   cursor: pointer;
-
 }
+.logout-button:hover {
+  background-color: white;
+  color: #0078aa;
+}
+.title-professor {
+  font-size: 2.2rem;
+  font-family: "Edu QLD Beginner", cursive;
+  color: #fff;
+  /* align-self: center; */
+  place-self: center;
+}
+.img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  place-self: center;
+}
+.professor-name {
+  font-size: 1.2rem;
+  font-family: "Edu QLD Beginner", cursive;
+  color: #fff;
+  place-self: center;
+}
+.material-symbols-outlined {
+  font-size: 2rem;
+  color: #fff;
+  place-self: center;
+  cursor: pointer;
+}
+
+.rightSidemenu {
+  display: none;
+  height: 100px;
+  width: 150px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  top: 52px;
+  background-color: #3ab4f2;
+  border-radius: 10px;
+  overflow-x: hidden;
+  padding-top: 10px;
+  text-align: start center;
+}
+.rightSidemenu a {
+  padding: 8px 8px 8px 8px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #ffffff;
+  display: block;
+  cursor: pointer;
+}
+.rightSidemenu a:hover {
+  color: #000000;
+}
+.material-symbols-outlined:hover {
+  color: #000000;
+}
+
+.select {
+  display: grid;
+  grid-auto-flow: column;
+  place-content: center;
+  gap: 5rem;
+  padding: 3rem;
+}
+details {
+  cursor: pointer;
+  background-color: #0078aa;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  font-family: "Edu QLD Beginner", cursive;
+}
+li {
+  list-style-type: none;
+}
+
+.select-title {
+  font-size: 1.2rem;
+  font-family: "Edu QLD Beginner", cursive;
+  color: #fff;
+  text-align: center;
+}
+summary {
+  list-style: none;
+}
+
+details > summary {
+  place-content: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+details > li {
+  padding: 5px;
+}
+
+.info {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 5rem;
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: #0078aa;
+  color: #fff;
+}
+.student {
+  display: grid;
+  place-content: center;
 
 .bag {
   position: relative;

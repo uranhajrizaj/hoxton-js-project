@@ -1,6 +1,9 @@
 import "./style.css";
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7a0ea316c8b26e52031b02cfe9eb239fa9a554d7
 let state = {
   students: [],
   professors: [],
@@ -12,7 +15,34 @@ let state = {
     type: "",
   },
   alertMessage: "",
-};
+   mark: {
+    subject: "",
+    mark: "",
+    professor: "",
+    student: "",
+  }
+   }
+
+
+
+ function getStudentMarkForEachSubejct() {
+  fetch(`http://localhost:3005/marks?_expand=student&_expand=professor&_expand=subject`)
+    .then((resp) => resp.json())
+    .then((data) => {
+      for(let mark of data){
+      state.mark.subject = mark.subject.id;
+      state.mark.mark = mark.mark;
+      state.mark.professor = mark.professor.id;
+      state.mark.student =mark.student.name;
+      }
+      console.log(data);
+      render();
+    }
+    );
+}
+getStudentMarkForEachSubejct()
+
+
 
 function getStudentsfromServer() {
   fetch("http://localhost:3005/students")
@@ -44,7 +74,9 @@ function signIn(email: String, password: String) {
         state.user.id = professor.id;
         state.user.password = `${professor.password}`;
         state.user.type = "professor";
-        render()
+        state.user.name = `${professor.name}`;
+        state.user.img = professor.img;
+        render();
       } else {
         fetch(`http://localhost:3005/students/${email}`)
           .then((resp) => resp.json())
@@ -52,11 +84,13 @@ function signIn(email: String, password: String) {
             if (student.password === password) {
               state.user.id = student.id;
               state.user.password = `${student.password}`;
+              state.user.name = `${student.name}`;
+              state.user.img = `${student.img}`;
               state.user.type = "student";
-              render()
+              render();
             } else {
               state.alertMessage = "Wrong email or password. Please try again";
-              render()
+              render();
             }
           });
       }
@@ -129,10 +163,174 @@ function renderProfessorPage() {
   let containerEl = document.createElement("div");
   containerEl.className = "container-professor";
 
+  let mainEl = document.createElement("div");
+  mainEl.className = "main-professor";
+
+  let headerEl = document.createElement("header");
+  headerEl.className = "header-professor";
+
+  let divEl = document.createElement("div");
+  divEl.className = "div-professor";
+
+  let verticalLineEl = document.createElement("div");
+  verticalLineEl.className = "material-symbols-outlined";
+  verticalLineEl.textContent = "menu";
+  verticalLineEl.id = "verticalLine";
+  verticalLineEl.addEventListener("click", function () {
+    openMenu();
+  });
+
+  let rightSidemenuEl = document.createElement("div");
+  rightSidemenuEl.id = "rightSidemenu";
+  rightSidemenuEl.className = "rightSidemenu";
+
+
+  let profileEl = document.createElement("a");
+  profileEl.textContent = "Profile";
+  profileEl.className = "profile";
+
+  let aboutEl = document.createElement("a");
+  aboutEl.textContent = "About ESSM";
+  aboutEl.className = "about";
+
+  rightSidemenuEl.append(profileEl, aboutEl);
+
   let pEl = document.createElement("h1");
-  pEl.textContent = "Welcome professor";
-  containerEl.append(pEl);
+  pEl.textContent = "essm";
+  pEl.className = "title-professor";
+
+
+  let imgEl = document.createElement("img");
+  imgEl.src = state.user.img;
+  imgEl.className = "img";
+
+  let p2El = document.createElement("p");
+  p2El.textContent = state.user.name;
+  p2El.className = "professor-name";
+
+  let buttonEl = document.createElement("div");
+  buttonEl.textContent = "logout";
+  buttonEl.className = "material-symbols-outlined";
+  buttonEl.addEventListener("click", function () {
+    state.user = {
+      id: "",
+      name: "",
+      img: "",
+      password: "",
+      type: "",
+    };
+    render();
+  });
+
+  rightSidemenuEl.append(buttonEl);
+  divEl.append(imgEl, p2El, buttonEl);
+  headerEl.append(verticalLineEl, pEl, divEl);
+  containerEl.append(headerEl, rightSidemenuEl, mainEl);
   bodyEl.append(containerEl);
+
+  renderProfessorContetPage(mainEl);
+}
+
+function openMenu() {
+  let rightSidemenuEl = document.getElementById("rightSidemenu");
+  if (rightSidemenuEl === null) return;
+
+  let appsEl = document.getElementById("verticalLine");
+  if (appsEl === null) return;
+
+  if (rightSidemenuEl.style.display === "block") {
+    appsEl.style.backgroundColor = "transparent";
+    rightSidemenuEl.style.display = "none";
+  } else {
+    appsEl.style.backgroundColor = "#3AB4F2";
+    rightSidemenuEl.style.display = "block";
+  }
+}
+
+function renderProfessorContetPage(mainEl: HTMLDivElement) {
+  mainEl.textContent = "";
+
+  let selectEl = document.createElement("div");
+  selectEl.className = "select";
+
+  let depEl = document.createElement("details");
+  depEl.className = "department";
+
+  let summaryEl = document.createElement("summary");
+  summaryEl.textContent = "Select Department";
+
+  let liEl = document.createElement("li");
+  liEl.textContent = "Computer Science";
+  liEl.addEventListener("click", function () {
+    summaryEl.textContent = "Department: Computer Science";
+  });
+
+  let li2El = document.createElement("li");
+  li2El.textContent = "Electrical Engineering";
+
+  let li3El = document.createElement("li");
+  li3El.textContent = "Mechanical Engineering";
+
+  depEl.append(summaryEl, liEl, li2El, li3El);
+
+  let subEl = document.createElement("details");
+  subEl.className = "subjects";
+
+  let summary1El = document.createElement("summary");
+  summary1El.textContent = "Select Subject";
+
+  let li4El = document.createElement("li");
+  li4El.textContent = "Algorithms";
+  li4El.addEventListener("click", function () {
+    summary1El.textContent = "Subject: Algorithms";
+  });
+
+  let li5El = document.createElement("li");
+  li5El.textContent = "Data Structures";
+
+  let li6El = document.createElement("li");
+  li6El.textContent = "Operating Systems";
+
+  subEl.append(summary1El, li4El, li5El, li6El);
+
+  let exEl = document.createElement("details");
+  exEl.className = "eaxam";
+
+  let summary2El = document.createElement("summary");
+  summary2El.textContent = "Select Exams month";
+
+  let li7El = document.createElement("li");
+  li7El.textContent = "July Exams ";
+  li7El.addEventListener("click", function () {
+    summary2El.textContent = "Exam: July Exams";
+  });
+
+  let studentEl = document.createElement("div");
+  studentEl.className = "student";
+
+  let infoEl = document.createElement("div");
+  infoEl.className = "info";
+
+  let studentNameEl = document.createElement("div");
+  studentNameEl.className = "student-name";
+  studentNameEl.textContent = "Student Name";
+
+  let studentIDEl = document.createElement("div");
+  studentIDEl.className = "student-id";
+  studentIDEl.textContent = "Student ID";
+
+  let studentGradeEl = document.createElement("div");
+  studentGradeEl.className = "student-grade";
+  studentGradeEl.textContent = "Student Grade";
+
+  infoEl.append(studentNameEl, studentIDEl, studentGradeEl);
+  studentEl.append(infoEl);
+
+  exEl.append(summary2El, li7El);
+
+  selectEl.append(depEl, subEl, exEl);
+
+  mainEl.append(selectEl, studentEl);
 }
 
 
@@ -428,9 +626,144 @@ function renderStudentMainPage() {
 function renderStudentPage() {
   if (bodyEl === null) return;
   bodyEl.textContent = "";
+<<<<<<< HEAD
   renderStudentHearderPage()
   renderStudentMainPage()
   createSideMenuBar()
+=======
+  let containerEl = document.createElement("div");
+  containerEl.className = "container-student";
+  let pEl = document.createElement("h1");
+  pEl.textContent = "Welcome student";
+
+  let TheHoleText = document.createElement('div')
+  TheHoleText.className = 'TheHoleText'
+
+
+  let MoreInfo = document.createElement('div')
+  MoreInfo.className = 'moreinfo'
+
+  let MoreInfotitle = document.createElement('h2')
+  MoreInfotitle.textContent = 'More info'
+  MoreInfotitle.className = 'more-info-title'
+
+  let textDivel = document.createElement('div')
+  textDivel.className = 'TextpartDiv'
+
+  let MoreinfoText1 = document.createElement('h3')
+  MoreinfoText1.className = 'more-info-text'
+  MoreinfoText1.textContent = 'How do we Calculate our finale grade?'
+
+  let MoreinfoText2 = document.createElement('h3')
+  MoreinfoText2.className = 'more-info-text'
+  MoreinfoText2.textContent = 'Let us walk you through it...'
+
+  let MoreinfoText3 = document.createElement('h3')
+  MoreinfoText3.className = 'more-info-text'
+  MoreinfoText3.textContent = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'
+
+
+  MoreInfo.append(MoreInfotitle)
+  textDivel.append(MoreinfoText1, MoreinfoText2, MoreinfoText3)
+  TheHoleText.append(MoreInfo, textDivel)
+  mainEl.append(TheHoleText)
+  bodyEl?.append(mainEl)
+}
+
+function renderErasumusPage() {
+  let mainEl = document.createElement('main')
+  mainEl.className = 'main'
+
+  let TheHoleText = document.createElement('div')
+  TheHoleText.className = 'TheHoleText'
+
+
+  let HelloErasmus = document.createElement('div')
+  HelloErasmus.className = 'HelloErasmus'
+
+  let WhatisErasmus = document.createElement('h2')
+  WhatisErasmus.textContent = 'What is Erasmus'
+  WhatisErasmus.className = 'What-is-Erasmus'
+
+  let ErasmusTextPart = document.createElement('div')
+  ErasmusTextPart.className = 'ErasmusTextPart'
+
+  let AboutErasmus = document.createElement('h3')
+  AboutErasmus.className = 'abouterasmus'
+  AboutErasmus.textContent = "Erasmus+ is the EU's programme to support education, training, youth and sport in Europe.It has an estimated budget of €26.2 billion. This is nearly double the funding compared to its predecessor programme (2014-2020). The 2021-2027 programme places a strong focus on social inclusion, the green and digital transitions, and promoting young peoples participation in democratic life It supports priorities and activities set out in the European Education Area, Digital Education Action Plan and the European Skills Agenda."
+
+  let TakePartInErasmus = document.createElement('h3')
+  TakePartInErasmus.className = 'takepartinerasmus'
+  TakePartInErasmus.textContent = 'Erasmus+ is a very wide programme, covering a diverse range of actions. How you can take part depends broadly on two factors:'
+
+  let TakePartInErasmus2 = document.createElement('h3')
+  TakePartInErasmus2.className = 'takepartinerasmus2'
+  TakePartInErasmus2.textContent = '1. if you are applying by yourself or on behalf of an organisation'
+
+  let TakePartInErasmus3 = document.createElement('h3')
+  TakePartInErasmus3.className = 'takepartinerasmus3'
+  TakePartInErasmus3.textContent = '2. in which country you or your organisation is based'
+
+  let TakePartInErasmus4 = document.createElement('h3')
+  TakePartInErasmus4.className = 'takepartinerasmus4'
+  TakePartInErasmus4.textContent = 'This page contains a general overview of how to take part. You will need to check the specific action that you are interested in to see the criteria you should meet.'
+
+
+  HelloErasmus.append(WhatisErasmus)
+  ErasmusTextPart.append(AboutErasmus, TakePartInErasmus, TakePartInErasmus2, TakePartInErasmus3, TakePartInErasmus4)
+  TheHoleText.append(HelloErasmus, ErasmusTextPart)
+  mainEl.append(TheHoleText)
+  bodyEl?.append(mainEl)
+}
+function renderRegulationsPage() {
+  let mainEl = document.createElement('main')
+  mainEl.className = 'main'
+
+  let TheHoleText = document.createElement('div')
+  TheHoleText.className = 'TheHoleText'
+
+
+  let RegulationsPart = document.createElement('div')
+  RegulationsPart.className = 'RegulationsPart'
+
+  let Regulations = document.createElement('h2')
+  Regulations.textContent = 'Decisions & Regulations'
+  Regulations.className = 'Regulations'
+
+  let Decisions_Regulations = document.createElement('div')
+  Decisions_Regulations.className = 'Decisions_Regulations'
+
+  let Rule1 = document.createElement('h3')
+  Rule1.className = 'rules'
+  Rule1.textContent = '1. Find a shorter way, automate using code, try to be as efficient as possible'
+
+  let Rule2 = document.createElement('h3')
+  Rule2.className = 'rules'
+  Rule2.textContent = '2. Be curious, go deep in language'
+
+  let Rule3 = document.createElement('h3')
+  Rule3.className = 'rules'
+  Rule3.textContent = '3. Read good open source codes'
+
+  let Rule4 = document.createElement('h3')
+  Rule4.className = 'rules'
+  Rule4.textContent = '4. Comments: Your code should be commented. Period. You should be able to understand it 12 months 24 months later.'
+
+  let Rule5 = document.createElement('h3')
+  Rule5.className = 'rules'
+  Rule5.textContent = '5. Write Reusable/modular code: Saves time in long run. Makes debugging easier. Makes modifications easier.'
+
+  let Rule6 = document.createElement('h3')
+  Rule6.className = 'rules'
+  Rule6.textContent = '6. Practice:It is hard to get better at anything without practice. Write a lot of code. Always try to write good code and keep improving yourself. None of the advice will help you if you are not writing code and applying good practices in realty.'
+
+
+  RegulationsPart.append(Regulations)
+  Decisions_Regulations.append(Rule1, Rule2, Rule3, Rule4, Rule5, Rule6)
+  TheHoleText.append(RegulationsPart, Decisions_Regulations)
+  mainEl.append(TheHoleText)
+  bodyEl?.append(mainEl)
+>>>>>>> 7a0ea316c8b26e52031b02cfe9eb239fa9a554d7
 }
 
 function render() {
@@ -442,7 +775,6 @@ function render() {
   if (state.user.type === "student") renderStudentPage();
 }
 render();
-
 
 window.state = state;
 console.log(state);
