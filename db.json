@@ -3,30 +3,54 @@
     {
       "name": "John Doe",
       "username": "jdoe",
+<<<<<<< HEAD
       "id": "johndoe@gmail.com",
       "img": "https://www.fillmurray.com/200/200",
       "password": "jdoe"
+=======
+      "id": "johndoe@email.com",
+      "password": "jdoe",
+      "image": "https://images.pexels.com/photos/5212339/pexels-photo-5212339.jpeg?auto=compress&cs=tinysrgb&w=600"
+>>>>>>> 5b15b5d205ae852486bbbf66b7c20877de5b864e
     },
     {
       "name": "James Poe ",
       "username": "jpoe",
+<<<<<<< HEAD
       "id": "jamespoe@gmail.com",
       "img": "https://www.fillmurray.com/200/201",
       "password": "jpoe"
+=======
+      "id": "janedoe@email.com",
+      "password": "jpoe",
+      "image": "https://images.pexels.com/photos/6325958/pexels-photo-6325958.jpeg?auto=compress&cs=tinysrgb&w=600"
+>>>>>>> 5b15b5d205ae852486bbbf66b7c20877de5b864e
     }
   ],
   "students": [
     {
       "name": "Alisha Patel",
       "username": "alishapatel",
+<<<<<<< HEAD
       "id": "alishapatel@gmail.com",
       "password": "apatel"
+=======
+      "id": "alishapatel@email.com",
+      "password": "apatel",
+      "image": "https://images.pexels.com/photos/1462630/pexels-photo-1462630.jpeg?auto=compress&cs=tinysrgb&w=600"
+>>>>>>> 5b15b5d205ae852486bbbf66b7c20877de5b864e
     },
     {
       "name": "Ural Bahadur",
       "username": "ubahadur",
+<<<<<<< HEAD
       "id": "uralbahadur@gmail.com",
       "password": "ubahadur"
+=======
+      "id": "uralbahadur@email.com",
+      "password": "ubahadur",
+      "image": "https://images.pexels.com/photos/1438081/pexels-photo-1438081.jpeg?auto=compress&cs=tinysrgb&w=600"
+>>>>>>> 5b15b5d205ae852486bbbf66b7c20877de5b864e
     }
   ],
   "subjects": [
