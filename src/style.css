@@ -7,10 +7,6 @@
   box-sizing: border-box;
 }
 
-body {
-  height: 100vh;
-}
-
 .container {
   height: 100vh;
   display: grid;
@@ -24,17 +20,9 @@ body {
   place-self: end center;
   font-size: 2.5rem;
   font-family: "Edu QLD Beginner", cursive;
-  gap: 1rem
-}
-
-.home-title {
-  place-self: end center;
-  font-size: 2.5rem;
-  font-family: 'Edu QLD Beginner', cursive;
   color: #fff;
   text-align: center;
 }
-
 .form {
   display: grid;
   place-content: center;
@@ -46,6 +34,7 @@ body {
   place-content: center;
   gap: 1rem;
   padding: 2rem;
+  /* border: 2px solid #0078AA; */
   width: 20rem;
   border-radius: 10px;
   background-color: #fff;
@@ -53,10 +42,10 @@ body {
 
 .title {
   font-size: 3rem;
+  /* font-weight: bold; */
   text-align: center;
   font-family: Lobster, sans-serif;
   color: #0078aa;
-  color: #0078AA;
 }
 
 .user,
@@ -80,18 +69,11 @@ body {
   background-color: #3ab4f2;
   color: #fff;
 }
-
-.login-button:hover {
-  background-color: #3AB4F2;
-  color: #fff;
-}
-
 .div-password {
   display: grid;
   place-content: center;
   gap: 1rem;
 }
-
 .alert-message {
   color: rgb(218, 48, 48);
   font-size: 1rem;
@@ -99,30 +81,6 @@ body {
 }
 
 .header-professor {
-
-/* header tek faqet studenti dhe profesori me qene me ngjyre blu te erret dhe teksti me ngjyre te bardhe */
-
-.header {
-  display: grid;
-  grid-auto-flow: column;
-  grid-template-columns: auto 1fr;
-  align-items: center;
-  padding: 1rem;
-  color: #1a2c52
-}
-
-.header a {
-  cursor: pointer;
-}
-
-.links {
-  display: grid;
-  grid-auto-flow: column;
-  gap: 1rem;
-  place-content: center;
-}
-
-.navigation {
   display: grid;
   grid-auto-flow: column;
   padding: 1rem;
@@ -140,18 +98,6 @@ body {
 .logout-button {
   padding: 0.5rem;
   border-radius: 10px;
-  padding: 0.7rem;
-}
-
-.buttons {
-  display: grid;
-  grid-auto-flow: column;
-  gap: 1rem;
-  place-content: center;
-}
-
-.material-symbols-outlined {
-  background-color: inherit;
   border: none;
   background-color: #3ab4f2;
   color: #fff;
@@ -263,309 +209,44 @@ details > li {
   grid-auto-flow: column;
   gap: 5rem;
   padding: 2rem;
-  border-radius: 10px;
+  border-top-left-radius: 10px;
   background-color: #0078aa;
   color: #fff;
 }
 .student {
   display: grid;
   place-content: center;
-
-.bag {
-  position: relative;
 }
-
-.count {
-  background-color: red;
-  color: white;
-  border-radius: 50%;
-  position: absolute;
-  padding: 2px;
-  top: -5px;
-  right: -0.7px;
-
+.select-item:hover {
+  background-color: #3ab4f2;
+  color: #fff;
 }
-
-header {
+.student-info {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  border-bottom: solid 1px rgb(193, 193, 193);
-  padding: 0.5rem 1rem;
-  width: 100%;
-  background-color: rgb(5, 5, 24);
-  color: white;
-  justify-content: space-between;
-}
-
-.sidebarimg {
-  margin: 7px;
-  width: 30px;
-  height: 30px;
-}
-
-.header_part {
-  padding: 10px;
-  text-align: center;
-  font-size: 19px;
-}
-
-.header_container {
-  grid-template-columns: 1fr 1fr;
-  text-align: end;
-  padding: 10px;
-
-}
-
-.studentaccoutimg {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  margin-left: 10px;
-}
-
-.header_container a {
-  font-size: 18px;
-  padding: 30px;
-}
-
-.header_container a:hover {
-  font-size: 20px;
-  color: rgb(125, 125, 187);
-
-}
-
-.side-nav {
-  display: flex;
-  flex-direction: column;
-  background-color: #191b1f;
-  height: 90%;
-  width: 230px;
-  padding-top: 5vh;
-  overflow-x: hidden;
-  transition: 0.5s;
-}
-
-.Close {
-  position: relative;
-  color: white;
-  top: -3%;
-  left: 81%;
-  font-size: 20px;
-}
-
-.Close:hover {
-  color: gray;
-  font-size: 24px;
-}
-
-.SideBarUl {
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  list-style-type: none;
-}
-
-.SideBarLi {
-  color: rgb(230, 230, 230);
-  font-size: 18px;
-  padding: 0 20px;
-  padding-bottom: 20px;
-  padding-top: 20px;
-  border-bottom: 1px solid rgb(97, 94, 94);
-  border-top: 1px solid rgb(97, 94, 94);
-
-}
-
-.SideBarLi:hover {
-  background-color: #263c45;
-  color: gray;
-}
-
-
-.Container {
-  height: 100%;
-  background-image: url(https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&w=600);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-repeat: no-repeat;
-  backdrop-filter: blur(8px);
-  height: 100vh;
-  width: 100%;
-  box-shadow: inset 0 0 0 2000px rgba(66, 117, 165, 0.3);
-}
-
-.main {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  place-items: center
-}
-
-.SubjectDivEl {
-  display: grid;
-  grid-template-rows: 1fr auto;
-  gap: 20pz;
-}
-
-.allsubjects {
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-  border: solid 5px rgb(74, 74, 74);
-  border-radius: 10px;
-  /* height: auto; */
-  width: 250px;
-  text-align: center;
-  margin-left: 50px;
-  background-color: white;
-}
-
-.allsubjects h2 {
-  padding: 20px;
-  justify-content: center;
-  text-align: center;
-}
-
-.allsubjects h3 {
-  border-top: solid 2px black;
-  padding: 20px;
-  justify-content: center;
-  text-align: center;
-}
-
-.allsubjects h3:hover {
-  font-size: 22px;
-  color: rgb(4, 4, 29);
-  background-color: #dbeffd;
-}
-
-.gradesheet {
-  border: solid 5px rgb(74, 74, 74);
-  border-radius: 10px;
-  float: left;
-  height: auto;
-  width: 250px;
-  text-align: center;
-  margin-left: 50px;
-  background-color: white;
-  padding: 20px;
-  margin-top: 20px;
-}
-
-.gradesheet:hover {
-  color: rgb(4, 4, 44);
-  background-color: #dbeffd;
-
-}
-
-.Important_Part {
-  display: grid;
-  grid-template-columns: 300px 1fr;
-  place-items: right;
-  justify-content: center;
-  border: solid 5px rgb(74, 74, 74);
-  border-radius: 10px;
-  width: 900px;
-  height: 600px;
-  margin: 50px;
-  text-align: center;
-  background-color: white;
-}
-
-.Professor_in_Student {
-  text-align: center;
-  justify-content: center;
-  border-right: solid 3.5px rgb(74, 74, 74);
-}
-
-.Professor_in_Student img {
-  width: 200px;
-  height: 210px;
-  margin-top: 60px;
-  margin-bottom: 20px;
-}
-
-.forstudent {
-  display: grid;
-  grid-template-rows: 150px 150px 150px;
-  margin: 60px;
-}
-
-.main {
-  height: 100vh;
-  display: grid;
-  place-items: start center;
-  background-image: url(https://cdn.wallpapersafari.com/68/66/PLgQbl.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  gap: 1rem
-}
-
-.TheHoleText {
-  width: 60%;
-  border: solid 5px rgb(9, 9, 40);
-  border-radius: 10px;
   place-content: center;
-  justify-content: center;
-  margin-top: 15%;
-  background-color: rgba(199, 230, 255, 0.816);
+  gap: 1rem;
 }
 
-.moreinfo {
-  text-align: center;
-  padding: 10px;
-}
-
-.more-info-title {
-  font-size: 29px;
-}
-
-.TextpartDiv {
+.one-student {
   display: grid;
-  grid-template-rows: 50px 50px 1fr;
-  padding: 20px;
+  place-content: center;
+  grid-auto-flow: column;
+  gap: 4.5rem;
+  padding: 1rem;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: #3ab4f2;
+  color: #fff;
+  width: 44.7rem;
 }
-
-.What-is-Erasmus {
-  padding: 10px;
-  text-align: center;
-}
-
-.ErasmusTextPart {
-  display: grid;
-  grid-template-rows: auto auto auto auto auto;
-  padding: 20px;
-}
-
-.takepartinerasmus {
-  padding: 5px;
-}
-
-.takepartinerasmus2 {
-  padding: 5px;
-  padding-left: 25px;
-}
-
-.takepartinerasmus3 {
-  padding: 5px;
-  padding-left: 25px;
-}
-
-.takepartinerasmus4 {
-  padding: 5px;
-}
-
-.Regulations {
-  text-align: center;
-  padding: 10px;
-}
-
-.Decisions_Regulations {
-  display: grid;
-  grid-template-rows: auto auto auto auto auto auto;
-  padding: 20px;
-}
-
-.rules {
-  padding: 5px;
+.input {
+  padding: 0.5rem;
+  width: 50px;
+  border-radius: 10px;
+  border: none;
+  background-color: white;
+  color: red;
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
 }

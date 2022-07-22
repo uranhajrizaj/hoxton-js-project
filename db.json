@@ -32,27 +32,55 @@
   "subjects": [
     {
       "name": "Algoritms",
-      "id": "algoritms"
+      "subjectId": "algoritms"
     },
     {
       "name": "Data Structures",
-      "id": "data-structures"
+      "subjectId": "data-structures"
     },
     {
       "name": "Operating Systems",
-      "id": "operating-systems"
+      "subjectId": "operating-systems"
     },
     {
       "name": "Programming Languages",
-      "id": "programming-languages"
+      "subjectId": "programming-languages"
     },
     {
       "name": "Software Engineering",
-      "id": "software-engineering"
+      "subjectId": "software-engineering"
     },
     {
       "name": "Web Development",
-      "id": "web-development"
+      "subjectId": "web-development"
+    }
+  ],
+  "departments": [
+    {
+      "name": "Computer Science",
+      "departmentId": "computer-science",
+      "studentId": "alishapatel@gmail.com",
+      "professorId": "johndoe@gmail.com",
+      "subject": [
+        "Algoritms",
+        "Data Structures",
+        "Operating Systems",
+        "Programming Languages"
+      ]
+    },
+    {
+      "name": "Electrical Engineering",
+      "departmentId": "electrical-engineering",
+      "studentId": "uralbahadur@gmail.com",
+      "professorId": "jamespoe@gmail.com",
+      "subject": ["Software Engineering", "Web Development"]
+    },
+    {
+      "name": "Mechanical Engineering",
+      "departmentId": "mechanical-engineering",
+      "professorId": "johndoe@gmail.com",
+      "studentId": "alishapatel@gmail.com",
+      "subject": ["Software Engineering", "Web Development"]
     }
   ],
   "marks": [
@@ -60,8 +88,7 @@
       "subjectId": "algoritms",
       "studentId": "uralbahadur@gmail.com",
       "professorId": "jamespoe@gmail.com",
-       "mark": ""
-
+      "mark": ""
     },
     {
       "subjectId": "data-structures",
