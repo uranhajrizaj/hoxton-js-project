@@ -20,6 +20,7 @@ body {
   background-size: cover;
   gap: 1rem;
 }
+
 .home-title {
   place-self: end center;
   font-size: 2.5rem;
@@ -76,6 +77,7 @@ body {
   font-size: 1.2rem;
   cursor: pointer;
 }
+
 .login-button:hover {
   background-color: #3ab4f2;
   color: #fff;
@@ -97,8 +99,6 @@ body {
   font-size: 1rem;
   text-align: start;
 }
-
-.header-professor {
 
 /* header tek faqet studenti dhe profesori me qene me ngjyre blu te erret dhe teksti me ngjyre te bardhe */
 
@@ -130,6 +130,7 @@ body {
   background-color: #0078aa;
   align-items: center;
 }
+
 .div-professor {
   display: grid;
   grid-auto-flow: column;
@@ -159,10 +160,12 @@ body {
   font-size: 1rem;
   cursor: pointer;
 }
+
 .logout-button:hover {
   background-color: white;
   color: #0078aa;
 }
+
 .title-professor {
   font-size: 2.2rem;
   font-family: "Edu QLD Beginner", cursive;
@@ -170,18 +173,21 @@ body {
   /* align-self: center; */
   place-self: center;
 }
+
 .img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   place-self: center;
 }
+
 .professor-name {
   font-size: 1.2rem;
   font-family: "Edu QLD Beginner", cursive;
   color: #fff;
   place-self: center;
 }
+
 .material-symbols-outlined {
   font-size: 2rem;
   color: #fff;
@@ -204,6 +210,7 @@ body {
   padding-top: 10px;
   text-align: start center;
 }
+
 .rightSidemenu a {
   padding: 8px 8px 8px 8px;
   text-decoration: none;
@@ -212,9 +219,11 @@ body {
   display: block;
   cursor: pointer;
 }
+
 .rightSidemenu a:hover {
   color: #000000;
 }
+
 .material-symbols-outlined:hover {
   color: #000000;
 }
@@ -226,6 +235,7 @@ body {
   gap: 5rem;
   padding: 3rem;
 }
+
 details {
   cursor: pointer;
   background-color: #0078aa;
@@ -234,6 +244,7 @@ details {
   border-radius: 10px;
   font-family: "Edu QLD Beginner", cursive;
 }
+
 li {
   list-style-type: none;
 }
@@ -244,17 +255,18 @@ li {
   color: #fff;
   text-align: center;
 }
+
 summary {
   list-style: none;
 }
 
-details > summary {
+details>summary {
   place-content: center;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
-details > li {
+details>li {
   padding: 5px;
 }
 
@@ -267,9 +279,11 @@ details > li {
   background-color: #0078aa;
   color: #fff;
 }
+
 .student {
   display: grid;
   place-content: center;
+}
 
 .bag {
   position: relative;
@@ -419,7 +433,7 @@ header {
   grid-template-rows: 1fr auto;
   gap: 20pz;
   place-items: center;
-  margin-top: 90px;
+  margin-top: 50px;
 }
 
 .allsubjects {
@@ -427,10 +441,10 @@ header {
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   border: solid 5px rgb(74, 74, 74);
   border-radius: 10px;
-  /* height: auto; */
-  width: 250px;
+
+  width: 280px;
   text-align: center;
-  margin-left: 50px;
+  margin-left: 20px;
   background-color: white;
 }
 
@@ -448,7 +462,6 @@ header {
 }
 
 .allsubjects h3:hover {
-  font-size: 22px;
   color: rgb(4, 4, 29);
   background-color: #dbeffd;
 }
@@ -460,7 +473,7 @@ header {
   height: auto;
   width: 250px;
   text-align: center;
-  margin-left: 50px;
+  margin-left: 25px;
   background-color: white;
   padding: 20px;
   margin-top: 20px;
@@ -493,16 +506,10 @@ header {
 }
 
 .Professor_in_Student img {
-  width: 200px;
-  height: 210px;
-  margin-top: 60px;
-  margin-bottom: 20px;
-}
-
-.forstudent {
-  display: grid;
-  grid-template-rows: 150px 150px 150px;
-  margin: 60px;
+  width: 150px;
+  height: 180px;
+  margin-top: 40px;
+  margin-bottom: 10px;
 }
 
 .main {
@@ -512,7 +519,31 @@ header {
   background-image: url(https://cdn.wallpapersafari.com/68/66/PLgQbl.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  gap: 1rem
+}
+
+.forstudent {
+  display: grid;
+  grid-template-rows: auto auto auto auto auto auto;
+}
+
+.Grades {
+  background-color: rgba(238, 238, 238, 0.932);
+  display: grid;
+  border: solid 0.5px rgba(164, 164, 164, 0.705);
+}
+
+.SubjectName {
+  font-size: 21.5px;
+  padding: 5px;
+  color: #071430;
+}
+
+.failed {
+  color: red;
+}
+
+.passed {
+  color: green;
 }
 
 .TheHoleText {

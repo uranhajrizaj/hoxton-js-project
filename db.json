@@ -4,7 +4,7 @@
       "name": "John Doe",
       "username": "jdoe",
       "id": "johndoe@gmail.com",
-      "img": "https://www.fillmurray.com/200/200",
+      "img": "https://images.pexels.com/photos/262391/pexels-photo-262391.jpeg?auto=compress&cs=tinysrgb&w=600",
       "password": "jdoe"
     },
     {
@@ -20,12 +20,14 @@
       "name": "Alisha Patel",
       "username": "alishapatel",
       "id": "alishapatel@gmail.com",
+      "img": "https://images.pexels.com/photos/1326946/pexels-photo-1326946.jpeg?auto=compress&cs=tinysrgb&w=600",
       "password": "apatel"
     },
     {
       "name": "Ural Bahadur",
       "username": "ubahadur",
       "id": "uralbahadur@gmail.com",
+      "img": "https://images.pexels.com/photos/7129700/pexels-photo-7129700.jpeg?auto=compress&cs=tinysrgb&w=600",
       "password": "ubahadur"
     }
   ],
@@ -57,28 +59,45 @@
   ],
   "marks": [
     {
-      "subjectId": "algoritms",
-      "studentId": "uralbahadur@gmail.com",
-      "professorId": "jamespoe@gmail.com",
-       "mark": ""
-
+      "subjectId": "programming-languages",
+      "studentId": "alishapatel@gmail.com",
+      "professorId": "johndoe@gmail.com",
+      "img": "https://www.fillmurray.com/200/200",
+      "mark": ""
     },
     {
       "subjectId": "data-structures",
       "studentId": "alishapatel@gmail.com",
       "professorId": "jamespoe@gmail.com",
+      "img": "https://www.fillmurray.com/200/201",
+      "mark": ""
+    },
+    {
+      "subjectId": "software-engineering",
+      "studentId": "alishapatel@gmail.com",
+      "professorId": "johndoe@gmail.com",
+      "img": "https://www.fillmurray.com/200/200",
       "mark": ""
     },
     {
       "subjectId": "operating-systems",
       "studentId": "uralbahadur@gmail.com",
       "professorId": "jamespoe@gmail.com",
+      "img": "https://www.fillmurray.com/200/201",
       "mark": ""
     },
     {
-      "subjectId": "programming-languages",
-      "studentId": "alishapatel@gmail.com",
+      "subjectId": "algoritms",
+      "studentId": "uralbahadur@gmail.com",
+      "professorId": "jamespoe@gmail.com",
+      "img": "https://www.fillmurray.com/200/201",
+      "mark": ""
+    },
+    {
+      "subjectId": "johndoe@gmail.com",
+      "studentId": "uralbahadur@gmail.com",
       "professorId": "johndoe@gmail.com",
+      "img": "https://www.fillmurray.com/200/200",
       "mark": ""
     }
   ]

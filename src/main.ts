@@ -1,9 +1,5 @@
 import "./style.css";
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 7a0ea316c8b26e52031b02cfe9eb239fa9a554d7
 let state = {
   students: [],
   professors: [],
@@ -15,25 +11,26 @@ let state = {
     type: "",
   },
   alertMessage: "",
-   mark: {
+  marks: {
     subject: "",
     mark: "",
     professor: "",
+    img: "",
     student: "",
   }
-   }
+}
 
 
 
- function getStudentMarkForEachSubejct() {
+function getStudentMarkForEachSubejct() {
   fetch(`http://localhost:3005/marks?_expand=student&_expand=professor&_expand=subject`)
     .then((resp) => resp.json())
     .then((data) => {
-      for(let mark of data){
-      state.mark.subject = mark.subject.id;
-      state.mark.mark = mark.mark;
-      state.mark.professor = mark.professor.id;
-      state.mark.student =mark.student.name;
+      for (let mark of data) {
+        state.marks.subject = mark.subject.id;
+        state.marks.mark = mark.mark;
+        state.marks.professor = mark.professor.id;
+        state.marks.student = mark.student.name;
       }
       console.log(data);
       render();
@@ -41,8 +38,6 @@ let state = {
     );
 }
 getStudentMarkForEachSubejct()
-
-
 
 function getStudentsfromServer() {
   fetch("http://localhost:3005/students")
@@ -333,8 +328,6 @@ function renderProfessorContetPage(mainEl: HTMLDivElement) {
   mainEl.append(selectEl, studentEl);
 }
 
-
-
 function renderStudentHearderPage() {
   let headerEl = document.createElement('header')
 
@@ -402,6 +395,11 @@ function createSideMenuBar() {
   let LiEl1 = document.createElement('Li')
   LiEl1.className = 'SideBarLi'
   LiEl1.textContent = 'More Info'
+  LiEl1.addEventListener('click', function () {
+    if (bodyEl === null) return;
+    renderMoreInfoPage()
+    render()
+  })
 
   let LiEl2 = document.createElement('Li')
   LiEl2.className = 'SideBarLi'
@@ -416,43 +414,43 @@ function createSideMenuBar() {
   bodyEl?.append(SIDEBARMENU)
 }
 
-// function renderMoreInfoPage() {
-//   let mainEl = document.createElement('main')
-//   mainEl.className = 'main'
+function renderMoreInfoPage() {
+  let mainEl = document.createElement('main')
+  mainEl.className = 'main'
 
-//   let TheHoleText = document.createElement('div')
-//   TheHoleText.className = 'TheHoleText'
-
-
-//   let MoreInfo = document.createElement('div')
-//   MoreInfo.className = 'moreinfo'
-
-//   let MoreInfotitle = document.createElement('h2')
-//   MoreInfotitle.textContent = 'More info'
-//   MoreInfotitle.className = 'more-info-title'
-
-//   let textDivel = document.createElement('div')
-//   textDivel.className = 'TextpartDiv'
-
-//   let MoreinfoText1 = document.createElement('h3')
-//   MoreinfoText1.className = 'more-info-text'
-//   MoreinfoText1.textContent = 'How do we Calculate our finale grade?'
-
-//   let MoreinfoText2 = document.createElement('h3')
-//   MoreinfoText2.className = 'more-info-text'
-//   MoreinfoText2.textContent = 'Let us walk you through it...'
-
-//   let MoreinfoText3 = document.createElement('h3')
-//   MoreinfoText3.className = 'more-info-text'
-//   MoreinfoText3.textContent = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'
+  let TheHoleText = document.createElement('div')
+  TheHoleText.className = 'TheHoleText'
 
 
-//   MoreInfo.append(MoreInfotitle)
-//   textDivel.append(MoreinfoText1, MoreinfoText2, MoreinfoText3)
-//   TheHoleText.append(MoreInfo, textDivel)
-//   mainEl.append(TheHoleText)
-//   bodyEl?.append(mainEl)
-// }
+  let MoreInfo = document.createElement('div')
+  MoreInfo.className = 'moreinfo'
+
+  let MoreInfotitle = document.createElement('h2')
+  MoreInfotitle.textContent = 'More info'
+  MoreInfotitle.className = 'more-info-title'
+
+  let textDivel = document.createElement('div')
+  textDivel.className = 'TextpartDiv'
+
+  let MoreinfoText1 = document.createElement('h3')
+  MoreinfoText1.className = 'more-info-text'
+  MoreinfoText1.textContent = 'How do we Calculate our finale grade?'
+
+  let MoreinfoText2 = document.createElement('h3')
+  MoreinfoText2.className = 'more-info-text'
+  MoreinfoText2.textContent = 'Let us walk you through it...'
+
+  let MoreinfoText3 = document.createElement('h3')
+  MoreinfoText3.className = 'more-info-text'
+  MoreinfoText3.textContent = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'
+
+
+  MoreInfo.append(MoreInfotitle)
+  textDivel.append(MoreinfoText1, MoreinfoText2, MoreinfoText3)
+  TheHoleText.append(MoreInfo, textDivel)
+  mainEl.append(TheHoleText)
+  bodyEl?.append(mainEl)
+}
 // function renderErasumusPage() {
 //   let mainEl = document.createElement('main')
 //   mainEl.className = 'main'
@@ -564,14 +562,24 @@ function renderStudentMainPage() {
   let H3El = document.createElement('h2')
   H3El.textContent = 'Subjects'
 
-  let MathEl = document.createElement('h3')
-  MathEl.textContent = 'Math'
+  let AlgoritmsEl = document.createElement('h3')
+  AlgoritmsEl.textContent = 'Algoritms'
 
-  let EnglishEl = document.createElement('h3')
-  EnglishEl.textContent = 'English'
+  let Data_StructuresEl = document.createElement('h3')
+  Data_StructuresEl.textContent = 'Data Structures'
 
-  let HistoryEl = document.createElement('h3')
-  HistoryEl.textContent = 'History'
+  let Operating_SystemsEl = document.createElement('h3')
+  Operating_SystemsEl.textContent = 'Operating Systems'
+
+  let Programming_LanguagesEl = document.createElement('h3')
+  Programming_LanguagesEl.textContent = 'Programming Languages'
+
+  let Software_EngineeringEl = document.createElement('h3')
+  Software_EngineeringEl.textContent = 'Software Engineering'
+
+  let Web_DevelopmentEl = document.createElement('h3')
+  Web_DevelopmentEl.textContent = 'Web Development'
+
 
   let ScienceEl = document.createElement('h3')
   ScienceEl.textContent = 'Science'
@@ -582,20 +590,33 @@ function renderStudentMainPage() {
 
 
 
+
+
+
+
   let ImportantPartEl = document.createElement('div')
   ImportantPartEl.className = 'Important_Part'
 
   let ProfSectionEl = document.createElement('div')
   ProfSectionEl.className = 'Professor_in_Student'
 
+  let ProfImg1 = document.createElement('img')
+  ProfImg1.src = "https://images.pexels.com/photos/262391/pexels-photo-262391.jpeg?auto=compress&cs=tinysrgb&w=600"
+
+  let ProfName1 = document.createElement('h3')
+  ProfName1.textContent = 'Professor John Doe'
+
+  let Profgmail1 = document.createElement('h3')
+  Profgmail1.textContent = 'Contact:johndoe@gmail.com'
+
   let ProfImg = document.createElement('img')
-  ProfImg.src = state.professors.img
+  ProfImg.src = "https://www.fillmurray.com/200/201"
 
   let ProfName = document.createElement('h3')
-  ProfName.textContent = 'Professor name'
+  ProfName.textContent = 'Professor James poe'
 
-  let ProfDepartment = document.createElement('h3')
-  ProfDepartment.textContent = 'Professor department'
+  let Profgmail = document.createElement('h3')
+  Profgmail.textContent = 'Contact:jamespoe@gmail.com'
 
   let forstudentPartEl = document.createElement('div')
   forstudentPartEl.className = 'forstudent'
@@ -604,166 +625,113 @@ function renderStudentMainPage() {
   GradesPartEl.className = 'Grades'
 
   let SubjectName = document.createElement('h3')
-  SubjectName.textContent = 'Subject Name'
+  SubjectName.textContent = 'Algorithm'
+  SubjectName.className = 'SubjectName'
 
   let SubjectGrade = document.createElement('h3')
-  SubjectGrade.textContent = 'Subject Grade'
+  SubjectGrade.textContent = 'Your Grade in this subject is: 7 '
+
+  let PassorNot = document.createElement('h3')
+  PassorNot.textContent = 'You Passed '
+  PassorNot.className = 'passed'
 
 
 
-  GradesPartEl.append(SubjectName, SubjectGrade)
-  forstudentPartEl.append(GradesPartEl)
-  ProfSectionEl.append(ProfImg, ProfName, ProfDepartment)
+  let GradesPartEl2 = document.createElement('div')
+  GradesPartEl2.className = 'Grades'
+
+  let SubjectName2 = document.createElement('h3')
+  SubjectName2.textContent = 'Data Structures'
+  SubjectName2.className = 'SubjectName'
+
+
+  let SubjectGrade2 = document.createElement('h3')
+  SubjectGrade2.textContent = 'Your Grade in this subject is: 5 '
+
+  let PassorNot2 = document.createElement('h3')
+  PassorNot2.textContent = 'You Passed '
+  PassorNot2.className = 'passed'
+
+
+  let GradesPartEl3 = document.createElement('div')
+  GradesPartEl3.className = 'Grades'
+
+  let SubjectName3 = document.createElement('h3')
+  SubjectName3.textContent = 'Operating Systems'
+  SubjectName3.className = 'SubjectName'
+
+  let SubjectGrade3 = document.createElement('h3')
+  SubjectGrade3.textContent = 'Your Grade in this subject is: 4 '
+
+  let PassorNot3 = document.createElement('h3')
+  PassorNot3.textContent = 'You Failed '
+  PassorNot3.className = 'failed'
+
+  let GradesPartEl4 = document.createElement('div')
+  GradesPartEl4.className = 'Grades'
+
+  let SubjectName4 = document.createElement('h3')
+  SubjectName4.textContent = 'Programming Languages'
+  SubjectName4.className = 'SubjectName'
+
+  let SubjectGrade4 = document.createElement('h3')
+  SubjectGrade4.textContent = 'Your Grade in this subject is: 9 '
+
+  let PassorNot4 = document.createElement('h3')
+  PassorNot4.textContent = 'You Passed '
+  PassorNot4.className = 'passed'
+
+  let GradesPartEl5 = document.createElement('div')
+  GradesPartEl5.className = 'Grades'
+
+  let SubjectName5 = document.createElement('h3')
+  SubjectName5.textContent = 'Software Engineering'
+  SubjectName5.className = 'SubjectName'
+
+  let SubjectGrade5 = document.createElement('h3')
+  SubjectGrade5.textContent = 'Your Grade in this subject is:10 '
+
+  let PassorNot5 = document.createElement('h3')
+  PassorNot5.textContent = 'You Passed '
+  PassorNot5.className = 'passed'
+
+  let GradesPartEl6 = document.createElement('div')
+  GradesPartEl6.className = 'Grades'
+
+  let SubjectName6 = document.createElement('h3')
+  SubjectName6.textContent = 'Web Development'
+  SubjectName6.className = 'SubjectName'
+
+
+  let SubjectGrade6 = document.createElement('h3')
+  SubjectGrade6.textContent = 'Your Grade in this subject is:6 '
+
+  let PassorNot6 = document.createElement('h3')
+  PassorNot6.textContent = 'You Passed '
+  PassorNot6.className = 'passed'
+
+  GradesPartEl6.append(SubjectName6, SubjectGrade6, PassorNot6)
+  GradesPartEl5.append(SubjectName5, SubjectGrade5, PassorNot5)
+  GradesPartEl4.append(SubjectName4, SubjectGrade4, PassorNot4)
+  GradesPartEl3.append(SubjectName3, SubjectGrade3, PassorNot3)
+  GradesPartEl2.append(SubjectName2, SubjectGrade2, PassorNot2)
+  GradesPartEl.append(SubjectName, SubjectGrade, PassorNot)
+  forstudentPartEl.append(GradesPartEl, GradesPartEl2, GradesPartEl3, GradesPartEl4, GradesPartEl5, GradesPartEl6)
+  ProfSectionEl.append(ProfImg1, ProfName1, Profgmail1, ProfImg, ProfName, Profgmail)
   ImportantPartEl.append(ProfSectionEl, forstudentPartEl)
-  AllSubjectsEl.append(H3El, MathEl, EnglishEl, HistoryEl, ScienceEl)
+  AllSubjectsEl.append(H3El, AlgoritmsEl, Data_StructuresEl, Operating_SystemsEl, Programming_LanguagesEl, Software_EngineeringEl, Web_DevelopmentEl)
   SubjectDivEl.append(AllSubjectsEl, AllGradesEl)
   MainEl.append(SubjectDivEl, ImportantPartEl)
   Container.append(MainEl)
   bodyEl?.append(Container)
 }
 
-
 function renderStudentPage() {
   if (bodyEl === null) return;
   bodyEl.textContent = "";
-<<<<<<< HEAD
   renderStudentHearderPage()
   renderStudentMainPage()
   createSideMenuBar()
-=======
-  let containerEl = document.createElement("div");
-  containerEl.className = "container-student";
-  let pEl = document.createElement("h1");
-  pEl.textContent = "Welcome student";
-
-  let TheHoleText = document.createElement('div')
-  TheHoleText.className = 'TheHoleText'
-
-
-  let MoreInfo = document.createElement('div')
-  MoreInfo.className = 'moreinfo'
-
-  let MoreInfotitle = document.createElement('h2')
-  MoreInfotitle.textContent = 'More info'
-  MoreInfotitle.className = 'more-info-title'
-
-  let textDivel = document.createElement('div')
-  textDivel.className = 'TextpartDiv'
-
-  let MoreinfoText1 = document.createElement('h3')
-  MoreinfoText1.className = 'more-info-text'
-  MoreinfoText1.textContent = 'How do we Calculate our finale grade?'
-
-  let MoreinfoText2 = document.createElement('h3')
-  MoreinfoText2.className = 'more-info-text'
-  MoreinfoText2.textContent = 'Let us walk you through it...'
-
-  let MoreinfoText3 = document.createElement('h3')
-  MoreinfoText3.className = 'more-info-text'
-  MoreinfoText3.textContent = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'
-
-
-  MoreInfo.append(MoreInfotitle)
-  textDivel.append(MoreinfoText1, MoreinfoText2, MoreinfoText3)
-  TheHoleText.append(MoreInfo, textDivel)
-  mainEl.append(TheHoleText)
-  bodyEl?.append(mainEl)
-}
-
-function renderErasumusPage() {
-  let mainEl = document.createElement('main')
-  mainEl.className = 'main'
-
-  let TheHoleText = document.createElement('div')
-  TheHoleText.className = 'TheHoleText'
-
-
-  let HelloErasmus = document.createElement('div')
-  HelloErasmus.className = 'HelloErasmus'
-
-  let WhatisErasmus = document.createElement('h2')
-  WhatisErasmus.textContent = 'What is Erasmus'
-  WhatisErasmus.className = 'What-is-Erasmus'
-
-  let ErasmusTextPart = document.createElement('div')
-  ErasmusTextPart.className = 'ErasmusTextPart'
-
-  let AboutErasmus = document.createElement('h3')
-  AboutErasmus.className = 'abouterasmus'
-  AboutErasmus.textContent = "Erasmus+ is the EU's programme to support education, training, youth and sport in Europe.It has an estimated budget of €26.2 billion. This is nearly double the funding compared to its predecessor programme (2014-2020). The 2021-2027 programme places a strong focus on social inclusion, the green and digital transitions, and promoting young peoples participation in democratic life It supports priorities and activities set out in the European Education Area, Digital Education Action Plan and the European Skills Agenda."
-
-  let TakePartInErasmus = document.createElement('h3')
-  TakePartInErasmus.className = 'takepartinerasmus'
-  TakePartInErasmus.textContent = 'Erasmus+ is a very wide programme, covering a diverse range of actions. How you can take part depends broadly on two factors:'
-
-  let TakePartInErasmus2 = document.createElement('h3')
-  TakePartInErasmus2.className = 'takepartinerasmus2'
-  TakePartInErasmus2.textContent = '1. if you are applying by yourself or on behalf of an organisation'
-
-  let TakePartInErasmus3 = document.createElement('h3')
-  TakePartInErasmus3.className = 'takepartinerasmus3'
-  TakePartInErasmus3.textContent = '2. in which country you or your organisation is based'
-
-  let TakePartInErasmus4 = document.createElement('h3')
-  TakePartInErasmus4.className = 'takepartinerasmus4'
-  TakePartInErasmus4.textContent = 'This page contains a general overview of how to take part. You will need to check the specific action that you are interested in to see the criteria you should meet.'
-
-
-  HelloErasmus.append(WhatisErasmus)
-  ErasmusTextPart.append(AboutErasmus, TakePartInErasmus, TakePartInErasmus2, TakePartInErasmus3, TakePartInErasmus4)
-  TheHoleText.append(HelloErasmus, ErasmusTextPart)
-  mainEl.append(TheHoleText)
-  bodyEl?.append(mainEl)
-}
-function renderRegulationsPage() {
-  let mainEl = document.createElement('main')
-  mainEl.className = 'main'
-
-  let TheHoleText = document.createElement('div')
-  TheHoleText.className = 'TheHoleText'
-
-
-  let RegulationsPart = document.createElement('div')
-  RegulationsPart.className = 'RegulationsPart'
-
-  let Regulations = document.createElement('h2')
-  Regulations.textContent = 'Decisions & Regulations'
-  Regulations.className = 'Regulations'
-
-  let Decisions_Regulations = document.createElement('div')
-  Decisions_Regulations.className = 'Decisions_Regulations'
-
-  let Rule1 = document.createElement('h3')
-  Rule1.className = 'rules'
-  Rule1.textContent = '1. Find a shorter way, automate using code, try to be as efficient as possible'
-
-  let Rule2 = document.createElement('h3')
-  Rule2.className = 'rules'
-  Rule2.textContent = '2. Be curious, go deep in language'
-
-  let Rule3 = document.createElement('h3')
-  Rule3.className = 'rules'
-  Rule3.textContent = '3. Read good open source codes'
-
-  let Rule4 = document.createElement('h3')
-  Rule4.className = 'rules'
-  Rule4.textContent = '4. Comments: Your code should be commented. Period. You should be able to understand it 12 months 24 months later.'
-
-  let Rule5 = document.createElement('h3')
-  Rule5.className = 'rules'
-  Rule5.textContent = '5. Write Reusable/modular code: Saves time in long run. Makes debugging easier. Makes modifications easier.'
-
-  let Rule6 = document.createElement('h3')
-  Rule6.className = 'rules'
-  Rule6.textContent = '6. Practice:It is hard to get better at anything without practice. Write a lot of code. Always try to write good code and keep improving yourself. None of the advice will help you if you are not writing code and applying good practices in realty.'
-
-
-  RegulationsPart.append(Regulations)
-  Decisions_Regulations.append(Rule1, Rule2, Rule3, Rule4, Rule5, Rule6)
-  TheHoleText.append(RegulationsPart, Decisions_Regulations)
-  mainEl.append(TheHoleText)
-  bodyEl?.append(mainEl)
->>>>>>> 7a0ea316c8b26e52031b02cfe9eb239fa9a554d7
 }
 
 function render() {
